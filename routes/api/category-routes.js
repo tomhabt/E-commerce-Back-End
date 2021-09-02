@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
       }
     ]
   }) 
-  .then(dbCatagoryData =>res.json(dbCatagoryData))
+  .then(dbCategoryData =>res.json(dbCategoryData))
   .catch(err => {
     console.log(err);
     res.status(500).json(err);
@@ -29,10 +29,16 @@ router.get('/:id', (req, res) => {
   Category.findOne({
     where: {
       id: req.params.id
-    }
+    },
+    include: [
+      {
+        model: Product,
+        attribute:['product_name', 'price', 'stock']
+      }
+    ]
   })
     .then(dbCategoryData => {
-      if (!dbCategoryrData) {
+      if (!dbCategoryData) {
         res.status(404).json({ message: 'No Category found with this id' });
         return;
       }
@@ -68,34 +74,20 @@ router.put('/:id', (req, res) => {
     }
   })
     .then(dbCategoryData => {
-      if (!dbCategoryData[0]){
+      if (!dbCategoryData){
         res.status(404).json({message:'No catagory name found with this id'})
       return;
       }
-      res.json(dbCategoryData);
+      res.json({category:dbCategoryData, message:'category info. is updated'});
     })
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
     });
   });
-
-// DELETE /api/catagories/1
+  
+  // DELETE /api/catagories/1
 router.delete('/:id', (req, res) => {
-  // delete a category by its `id` value
-  Category.create({
-    category_name: req.body.category_name
-  })
-    .then(dbCategoryData => res.json(dbCategoryData))
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-  });
-  
-  
-  // PUT /api/catagories/1
-  router.put('/:id', (req, res) => {
     // update a category by its `id` value
     Category.destroy({
       where: {
@@ -103,11 +95,11 @@ router.delete('/:id', (req, res) => {
       }
     })
       .then(dbCategoryData => {
-        if (dbCategoryData[0]){
+        if (!dbCategoryData){
           res.status(404).json({message:'No catagory name found with this id'})
         return;
         }
-        res.json(dbCategoryData);
+        res.json({category:dbCategoryData, message:'The category has been deleted!'});
       })
       .catch(err => {
         console.log(err);

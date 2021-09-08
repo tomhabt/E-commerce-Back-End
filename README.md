@@ -1,10 +1,17 @@
 # E-commerce-Back-End
 
-Video demonstration for the typical user flow through the application (Part 1) Link: 
- 
+1. Video demonstration for the typical user flow through the application (Part 1) Link: https://drive.google.com/file/d/16-JCMk4xtC27kpcj03z7iOAqvhEl58Rt/view?usp=sharing
+
+2. Video demonstration for the typical user flow through the application (Part 2) Link: https://drive.google.com/file/d/1056uXYT6ActIsGuKpyeT2p0vPF24JNdD/view?usp=sharing
+
+3. Video demonstration for the typical user flow through the application (Part 3) Link: 2. Video demonstration for the typical user flow through the application (Part 2) Link: https://drive.google.com/file/d/1056uXYT6ActIsGuKpyeT2p0vPF24JNdD/view?usp=sharing
+
+4. Video demonstration for the typical user flow through the application (Part 4) Link: 2. Video demonstration for the typical user flow through the application (Part 2) Link: https://drive.google.com/file/d/1u_Ho20Tzjf_gLObrShEs8uLx1u7bXwYV/view?usp=sharing
+
 
 # E-commerce-Back-End Repo
-https://github.com/tomhabt/Employee-Tracker.git
+https://github.com/tomhabt/E-commerce-Back-End.git
+
 
 # About
 Internet retail, also known as e-commerce, is the largest sector of the electronics industry, having generated an estimated US$29 trillion in 2017 (Source: United Nations Conference on Trade and Development). E-commerce platforms like Shopify and WooCommerce provide a suite of services to businesses of all sizes. Due to the prevalence of these platforms, developers should understand the fundamental architecture of e-commerce sites.
